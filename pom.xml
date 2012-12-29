@@ -155,12 +155,13 @@
 			<plugin>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.2</version>
-				<!-- 
 				<configuration>
+					<locales>en,fr,pt_BR</locales>
+				<!-- 
 					<templateFile>${basedir}/src/site/maven-site.vm</templateFile>
 					<excludeDefaults>true</excludeDefaults>
-				</configuration>
 				 -->
+				</configuration>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -181,6 +182,18 @@
 	<reporting>
 		<plugins>
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>l10n-maven-plugin</artifactId>
+				<version>1.0-alpha-2</version>
+				<configuration>
+					<locales>
+						<locale>en</locale>
+						<locale>fr</locale>
+						<locale>pt_BR</locale>
+					</locales>
+				</configuration>
+			</plugin>
+   			<plugin>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
 				<version>2.6</version>
 				<reportSets>
@@ -188,10 +201,8 @@
 						<reports>
 							<!-- 
 							<report>cim</report>
-							<report>distribution-management</report>
 							<report>help</report>
 							<report>mailing-list</report>
-							<report>index</report>
 							 -->
 							<report>index</report>
 							<report>summary</report>
