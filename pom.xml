@@ -4,7 +4,7 @@
 
 	<groupId>br.com.endrigo.utils</groupId>
 	<artifactId>java-utils</artifactId>
-	<version>1.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>Java Utils</name>
@@ -156,8 +156,8 @@
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.2</version>
 				<configuration>
-					<locales>en,fr,pt_BR</locales>
 				<!-- 
+					<locales>en,fr,pt_BR</locales>
 					<templateFile>${basedir}/src/site/maven-site.vm</templateFile>
 					<excludeDefaults>true</excludeDefaults>
 				 -->
