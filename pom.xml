@@ -4,7 +4,7 @@
 
 	<groupId>br.com.endrigo.utils</groupId>
 	<artifactId>java-utils</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Java Utils</name>
@@ -131,9 +131,11 @@
 				<version>2.4</version>
 				<!-- Bug MRELEASE-273 has been throwing NPE during release:perform, typically 
 					after deploy so this places it last. -->
+					<!-- 
 				<configuration>
 					<goals>package site-deploy assembly:attached deploy</goals>
 				</configuration>
+					 -->
 			</plugin>	
 			<plugin>
 				<!-- explicitly define maven-deploy-plugin after other to force exec 
