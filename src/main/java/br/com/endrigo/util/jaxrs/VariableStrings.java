@@ -1,4 +1,4 @@
-package br.com.endrigo.utils.jaxrs;
+package br.com.endrigo.util.jaxrs;
 
 /**
  * Utility class designed to be used with the JAX-RS API. The purpose of it is
@@ -18,6 +18,9 @@ public class VariableStrings {
 	private final String[] splitPath;
 
 	public VariableStrings(String unparsedPath) {
+		if (unparsedPath == null) {
+			throw new NullPointerException("The parameter is mandatory.");
+		}
 		splitPath = unparsedPath.split("/");
 	}
 

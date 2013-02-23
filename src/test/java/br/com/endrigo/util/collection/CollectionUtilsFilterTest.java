@@ -1,4 +1,4 @@
-package br.com.endrigo.utils.collection;
+package br.com.endrigo.util.collection;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,6 +10,9 @@ import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
+
+import br.com.endrigo.util.collection.CollectionsUtils;
+import br.com.endrigo.util.collection.Predicate;
 
 /**
  * Unit test to check the method {@link CollectionsUtils#filter(Collection, Predicate)}.
