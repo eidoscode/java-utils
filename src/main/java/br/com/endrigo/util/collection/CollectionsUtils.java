@@ -1,4 +1,4 @@
-package br.com.endrigo.utils.collection;
+package br.com.endrigo.util.collection;
 
 import java.util.ArrayList;
 import java.util.Collection;

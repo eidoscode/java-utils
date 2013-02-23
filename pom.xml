@@ -3,7 +3,7 @@
 
 	<groupId>br.com.endrigo.utils</groupId>
 	<artifactId>java-utils</artifactId>
-	<version>1.0.2-temp-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Java Utils</name>

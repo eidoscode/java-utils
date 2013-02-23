@@ -6,4 +6,4 @@
  * @since 1.0
  * @version 1.0
  */
-package br.com.endrigo.utils.collection;
+package br.com.endrigo.util.collection;

@@ -6,4 +6,4 @@
  * @since 1.0.1
  * @version 1.0
  */
-package br.com.endrigo.utils.jaxrs;
+package br.com.endrigo.util.jaxrs;
