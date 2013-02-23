@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.endrigo.utils</groupId>
 	<artifactId>java-utils</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1-temp</version>
 	<packaging>jar</packaging>
 
 	<name>Java Utils</name>
@@ -21,7 +20,8 @@
 		<connection>scm:git:https://github.com/antonini/java-utils.git</connection>
 		<developerConnection>scm:git:https://github.com/antonini/java-utils.git</developerConnection>
 		<url>https://github.com/antonini/java-utils</url>
-	</scm>
+	  <tag>java-utils-1.0.1-temp</tag>
+  </scm>
 	
 	<licenses>
 		<license>
