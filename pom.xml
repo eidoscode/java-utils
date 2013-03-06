@@ -173,7 +173,20 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
+					<!-- 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-changes-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<issueManagementSystems>
+						<issueManagementSystem>changes.xml</issueManagementSystem>
+						<issueManagementSystem>GitHub</issueManagementSystem>
+					</issueManagementSystems>
+				</configuration>
+			</plugin>
+					 -->
 		</plugins>
 	</build>
 	
@@ -195,7 +208,7 @@
 					</locales>
 				</configuration>
 			</plugin>
-   			<plugin>
+			<plugin>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
 				<version>2.6</version>
 				<reportSets>
@@ -241,41 +254,29 @@
 						<format>xml</format>
 					</formats>
 				</configuration>
-			</plugin>			
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-changes-plugin</artifactId>
 				<version>2.8</version>
 				<configuration>
+					<columnNames>Id,Type,Summary,Assignee,Status,Fix Version</columnNames>
+					<includeOpenIssues>true</includeOpenIssues>
+					<onlyMilestoneIssues>false</onlyMilestoneIssues>
 					<githubAPIScheme>https</githubAPIScheme>
 					<githubAPIPort>443</githubAPIPort>
 				</configuration>
 				<reportSets>
 					<reportSet>
 						<reports>
+							<report>changes-report</report>
 							<report>github-report</report>
 						</reports>
 					</reportSet>
 				</reportSets>
+				<!-- 
+				 -->
 			</plugin>
 		</plugins>
 	</reporting>
-<!-- 
-	<reporting>
-		<plugins>
-			<plugin>
-				<artifactId>maven-changes-plugin</artifactId>
-				<version>2.8</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>changes-report</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
-		</plugins>
-	</reporting>
- -->
-
 </project>
