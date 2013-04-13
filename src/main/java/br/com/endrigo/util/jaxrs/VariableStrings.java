@@ -1,5 +1,9 @@
 package br.com.endrigo.util.jaxrs;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Utility class designed to be used with the JAX-RS API. The purpose of it is
  * to make it possible to expose an JAX-RS Path that receives an varargs
@@ -15,20 +19,31 @@ package br.com.endrigo.util.jaxrs;
  */
 public class VariableStrings {
 
-	private final String[] splitPath;
+	private final List<String> splitPath;
 
 	public VariableStrings(String unparsedPath) {
 		if (unparsedPath == null) {
 			throw new NullPointerException("The parameter is mandatory.");
 		}
-		splitPath = unparsedPath.split("/");
+		String[] paths = unparsedPath.split("/");
+		splitPath = Collections.unmodifiableList(Arrays.asList(paths));
 	}
 
 	/**
-	 * Returns the String split by the slash ("/").
+	 * Returns an String array split by the slash ("/").
+	 * @return
+	 * @deprecated Use instead of this the method {@link #getSplitPaths()}
+	 */
+	@Deprecated
+	public String[] getSplitPath() {
+		return splitPath.toArray(new String[splitPath.size()]);
+	}
+	
+	/**
+	 * Returns the List of string split by the slash ("/").
 	 * @return
 	 */
-	public String[] getSplitPath() {
+	public List<String> getSplitPaths() {
 		return splitPath;
 	}
 

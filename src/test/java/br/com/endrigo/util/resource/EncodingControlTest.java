@@ -2,6 +2,7 @@ package br.com.endrigo.util.resource;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -34,7 +35,25 @@ public class EncodingControlTest {
 		checkBundle(BUNDLE_FILE_UTF8, US, ENCODING_UTF8, BUNDLE_KEY);
 		checkBundle(BUNDLE_FILE_ISO88591, BRAZIL, ENCODING_ISO88591, BUNDLE_KEY);
 	}
-
+	
+	@Test(expected=NullPointerException.class)
+	public void testNullPointer1() throws IllegalAccessException, InstantiationException, IOException {
+		ENCODING_UTF8.newBundle(null, US, "format", Thread.currentThread().getContextClassLoader(), true);
+	}
+	@Test(expected=NullPointerException.class)
+	public void testNullPointer2() throws IllegalAccessException, InstantiationException, IOException {
+		ENCODING_UTF8.newBundle("base", null, "format", Thread.currentThread().getContextClassLoader(), true);
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void testNullPointer3() throws IllegalAccessException, InstantiationException, IOException {
+		ENCODING_UTF8.newBundle("base", US, null, Thread.currentThread().getContextClassLoader(), true);
+	}
+	@Test(expected=NullPointerException.class)
+	public void testNullPointer4() throws IllegalAccessException, InstantiationException, IOException {
+		ENCODING_UTF8.newBundle("base", US, "format", null, true);
+	}
+	
 	private void checkBundle(String bundleFile, Locale locale,
 			EncodingControl control, String bundleKey) {
 		ResourceBundle labels = ResourceBundle.getBundle(bundleFile, locale,
