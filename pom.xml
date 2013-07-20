@@ -65,15 +65,15 @@
 			<id>eidoscode-repository-release</id>
 			<url>ftp://ftp.eidoscode.com/</url>
 		</repository>
-		<site>
-			<id>eidoscode-repository-site</id>
-			<url>ftp://ftp.eidoscode.com/</url>
-		</site>
 		<snapshotRepository>
 			<id>eidoscode-repository-snapshot</id>
 			<url>ftp://ftp.eidoscode.com/</url>
 			<uniqueVersion>true</uniqueVersion>
 		</snapshotRepository>
+		<site>
+			<id>eidoscode-repository-site</id>
+			<url>ftp://ftp.eidoscode.com/java-utils/</url>
+		</site>
 	</distributionManagement>
 
 	<build>
