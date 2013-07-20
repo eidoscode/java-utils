@@ -1,4 +1,4 @@
-package br.com.endrigo.util.collection;
+package com.eidoscode.util.collection.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,12 +11,13 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import br.com.endrigo.util.collection.CollectionsUtils;
-import br.com.endrigo.util.collection.Predicate;
+import com.eidoscode.util.collection.CollectionsUtils;
+import com.eidoscode.util.collection.Predicate;
 
 /**
- * Unit test to check the method {@link CollectionsUtils#filter(Collection, Predicate)}.
- *
+ * Unit test to check the method
+ * {@link CollectionsUtils#filter(Collection, Predicate)}.
+ * 
  * @author eantonini
  * @since 1.0
  * @version 1.0
@@ -24,17 +25,21 @@ import br.com.endrigo.util.collection.Predicate;
 public class CollectionUtilsFilterTest {
 
 	@Test(expected = IllegalAccessException.class)
-	public void testFailConstructor() throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException,
+	public void testFailConstructor() throws NoSuchMethodException,
+			SecurityException, InstantiationException, IllegalAccessException,
 			IllegalArgumentException, InvocationTargetException {
-		Constructor constructor = CollectionsUtils.class.getDeclaredConstructor();
+		Constructor<CollectionsUtils> constructor = CollectionsUtils.class
+				.getDeclaredConstructor();
 		// constructor.setAccessible(true);
 		constructor.newInstance();
 	}
 
 	@Test
-	public void testGiveConstructorAccess() throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException,
+	public void testGiveConstructorAccess() throws NoSuchMethodException,
+			SecurityException, InstantiationException, IllegalAccessException,
 			IllegalArgumentException, InvocationTargetException {
-		Constructor constructor = CollectionsUtils.class.getDeclaredConstructor();
+		Constructor<CollectionsUtils> constructor = CollectionsUtils.class
+				.getDeclaredConstructor();
 		constructor.setAccessible(true);
 		constructor.newInstance();
 	}
@@ -51,27 +56,29 @@ public class CollectionUtilsFilterTest {
 
 	@Test
 	public void testFilterReturnZero() {
-		Collection<String> b = CollectionsUtils.filter(getList(), new Predicate<String>() {
+		Collection<String> b = CollectionsUtils.filter(getList(),
+				new Predicate<String>() {
 
-			@Override
-			public boolean apply(String type) {
-				return false;
+					@Override
+					public boolean apply(String type) {
+						return false;
 
-			};
-		});
+					};
+				});
 		assertEquals(0, b.size());
 	}
 
 	@Test
 	public void testFilterBlankList() {
-		Collection<String> b = CollectionsUtils.filter(new ArrayList<String>(), new Predicate<String>() {
+		Collection<String> b = CollectionsUtils.filter(new ArrayList<String>(),
+				new Predicate<String>() {
 
-			@Override
-			public boolean apply(String type) {
-				return false;
+					@Override
+					public boolean apply(String type) {
+						return false;
 
-			};
-		});
+					};
+				});
 		assertEquals(0, b.size());
 	}
 
@@ -79,14 +86,15 @@ public class CollectionUtilsFilterTest {
 	public void testFilterPassAll() {
 		List<String> list = getList();
 		long result = list.size();
-		Collection<String> b = CollectionsUtils.filter(list, new Predicate<String>() {
+		Collection<String> b = CollectionsUtils.filter(list,
+				new Predicate<String>() {
 
-			@Override
-			public boolean apply(String type) {
-				return true;
+					@Override
+					public boolean apply(String type) {
+						return true;
 
-			};
-		});
+					};
+				});
 		assertEquals(result, b.size());
 	}
 
@@ -106,14 +114,15 @@ public class CollectionUtilsFilterTest {
 		list.add("BA5");
 		list.add("BA6");
 
-		Collection<String> b = CollectionsUtils.filter(list, new Predicate<String>() {
+		Collection<String> b = CollectionsUtils.filter(list,
+				new Predicate<String>() {
 
-			@Override
-			public boolean apply(String type) {
-				return (type.charAt(0) == 'A');
+					@Override
+					public boolean apply(String type) {
+						return (type.charAt(0) == 'A');
 
-			};
-		});
+					};
+				});
 		assertEquals(6, b.size());
 	}
 

@@ -1,19 +1,14 @@
-package br.com.endrigo.util.collection;
+package com.eidoscode.util.collection;
 
 /**
  * Used to judge an object. <br/>
- * 
- * @deprecated Use the {@link com.eidoscode.util.collection.Predicate} instead
- *             of this one.
  * 
  * @see CollectionsUtils
  * @author eantonini
  * @since 1.0
  * @version 1.0
  */
-@Deprecated
-public interface Predicate<T> extends
-		com.eidoscode.util.collection.Predicate<T> {
+public interface Predicate<T> {
 
 	/**
 	 * Method to be implemented to qualify an object.
@@ -23,6 +18,5 @@ public interface Predicate<T> extends
 	 * @return <code>true</code> If the qualification passed, <code>false</code>
 	 *         if don't.
 	 */
-	@Override
 	boolean apply(T type);
 }

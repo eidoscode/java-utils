@@ -1,4 +1,4 @@
-package br.com.endrigo.util.resource;
+package com.eidoscode.util.resource;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.security.PrivilegedExceptionAction;
  * The purpose of this class is to be a helper class that is going to be used
  * with privileges. This is going to be used with the {@link EncodingControl}.
  * 
- * @author antonini
+ * @author eantonini
  * @since 1.0.3
  * @version 1.0
  * 

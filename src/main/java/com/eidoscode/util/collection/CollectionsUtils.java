@@ -1,4 +1,4 @@
-package br.com.endrigo.util.collection;
+package com.eidoscode.util.collection;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,13 +6,10 @@ import java.util.Collection;
 /**
  * Utilities classes to be used with collections.
  * 
- * @deprecated Use the {@link com.eidoscode.util.collection.CollectionsUtils}
- *             instead of this one.
  * @author eantonini
  * @since 1.0
  * @version 1.0
  */
-@Deprecated
 public final class CollectionsUtils {
 
 	private CollectionsUtils() {
@@ -51,8 +48,22 @@ public final class CollectionsUtils {
 	 */
 	public static <T> Collection<T> filter(Collection<T> source,
 			Predicate<T> predicate) {
-		return com.eidoscode.util.collection.CollectionsUtils.filter(source,
-				predicate);
+		if (source == null) {
+			throw new NullPointerException("The source is mandatory.");
+		}
+		if (predicate == null) {
+			throw new NullPointerException("The predicate is mandatory.");
+		}
+
+		Collection<T> result = new ArrayList<T>();
+		if (source.size() > 0) {
+			for (T element : source) {
+				if (predicate.apply(element)) {
+					result.add(element);
+				}
+			}
+		}
+		return result;
 	}
 
 }
