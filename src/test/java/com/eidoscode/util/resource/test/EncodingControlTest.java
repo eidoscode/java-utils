@@ -1,4 +1,4 @@
-package br.com.endrigo.util.resource;
+package com.eidoscode.util.resource.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,10 +8,12 @@ import java.util.ResourceBundle;
 
 import org.junit.Test;
 
+import com.eidoscode.util.resource.EncodingControl;
+
 /**
  * Unit test of the {@link EncodingControl}.
  * 
- * @author antonini
+ * @author eantonini
  * @since 1.0.3
  * @version 1.0
  * 
@@ -35,25 +37,34 @@ public class EncodingControlTest {
 		checkBundle(BUNDLE_FILE_UTF8, US, ENCODING_UTF8, BUNDLE_KEY);
 		checkBundle(BUNDLE_FILE_ISO88591, BRAZIL, ENCODING_ISO88591, BUNDLE_KEY);
 	}
-	
-	@Test(expected=NullPointerException.class)
-	public void testNullPointer1() throws IllegalAccessException, InstantiationException, IOException {
-		ENCODING_UTF8.newBundle(null, US, "format", Thread.currentThread().getContextClassLoader(), true);
+
+	@Test(expected = NullPointerException.class)
+	public void testNullPointer1() throws IllegalAccessException,
+			InstantiationException, IOException {
+		ENCODING_UTF8.newBundle(null, US, "format", Thread.currentThread()
+				.getContextClassLoader(), true);
 	}
-	@Test(expected=NullPointerException.class)
-	public void testNullPointer2() throws IllegalAccessException, InstantiationException, IOException {
-		ENCODING_UTF8.newBundle("base", null, "format", Thread.currentThread().getContextClassLoader(), true);
+
+	@Test(expected = NullPointerException.class)
+	public void testNullPointer2() throws IllegalAccessException,
+			InstantiationException, IOException {
+		ENCODING_UTF8.newBundle("base", null, "format", Thread.currentThread()
+				.getContextClassLoader(), true);
 	}
-	
-	@Test(expected=NullPointerException.class)
-	public void testNullPointer3() throws IllegalAccessException, InstantiationException, IOException {
-		ENCODING_UTF8.newBundle("base", US, null, Thread.currentThread().getContextClassLoader(), true);
+
+	@Test(expected = NullPointerException.class)
+	public void testNullPointer3() throws IllegalAccessException,
+			InstantiationException, IOException {
+		ENCODING_UTF8.newBundle("base", US, null, Thread.currentThread()
+				.getContextClassLoader(), true);
 	}
-	@Test(expected=NullPointerException.class)
-	public void testNullPointer4() throws IllegalAccessException, InstantiationException, IOException {
+
+	@Test(expected = NullPointerException.class)
+	public void testNullPointer4() throws IllegalAccessException,
+			InstantiationException, IOException {
 		ENCODING_UTF8.newBundle("base", US, "format", null, true);
 	}
-	
+
 	private void checkBundle(String bundleFile, Locale locale,
 			EncodingControl control, String bundleKey) {
 		ResourceBundle labels = ResourceBundle.getBundle(bundleFile, locale,
