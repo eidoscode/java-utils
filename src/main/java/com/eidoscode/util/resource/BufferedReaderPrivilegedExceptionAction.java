@@ -13,7 +13,7 @@ import java.security.PrivilegedExceptionAction;
  * The purpose of this class is to be a helper class that is going to be used
  * with privileges. This is going to be used with the {@link EncodingControl}.
  * 
- * @author eantonini
+ * @author antonini
  * @since 1.0.3
  * @version 1.0
  * 

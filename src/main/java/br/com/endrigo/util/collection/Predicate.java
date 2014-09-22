@@ -7,7 +7,7 @@ package br.com.endrigo.util.collection;
  *             of this one.
  * 
  * @see CollectionsUtils
- * @author eantonini
+ * @author antonini
  * @since 1.0
  * @version 1.0
  */

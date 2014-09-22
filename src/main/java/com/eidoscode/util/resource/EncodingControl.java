@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
  * written on any encoding. It's necessary to send it through parameter what
  * encoding you want to use.
  * 
- * @author eantonini
+ * @author antonini
  * @since 1.0.3
  * @version 1.0
  */

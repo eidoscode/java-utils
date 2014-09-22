@@ -4,7 +4,7 @@ package com.eidoscode.util.collection;
  * Used to judge an object. <br/>
  * 
  * @see CollectionsUtils
- * @author eantonini
+ * @author antonini
  * @since 1.0
  * @version 1.0
  */
