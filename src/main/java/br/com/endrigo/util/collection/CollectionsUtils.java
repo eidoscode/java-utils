@@ -8,7 +8,7 @@ import java.util.Collection;
  * 
  * @deprecated Use the {@link com.eidoscode.util.collection.CollectionsUtils}
  *             instead of this one.
- * @author eantonini
+ * @author antonini
  * @since 1.0
  * @version 1.0
  */

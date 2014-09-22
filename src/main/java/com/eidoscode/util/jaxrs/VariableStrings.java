@@ -13,7 +13,7 @@ import java.util.List;
  * {@link VariableStrings#getSplitPath()} to send the value to the original
  * method.
  * 
- * @author eantonini
+ * @author antonini
  * @since 1.0.1
  * @version 1.0
  */
