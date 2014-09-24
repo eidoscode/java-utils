@@ -19,34 +19,23 @@ import java.util.List;
  */
 public class VariableStrings {
 
-	private final List<String> splitPath;
+    private final List<String> splitPath;
 
-	public VariableStrings(String unparsedPath) {
-		if (unparsedPath == null) {
-			throw new NullPointerException("The parameter is mandatory.");
-		}
-		String[] paths = unparsedPath.split("/");
-		splitPath = Collections.unmodifiableList(Arrays.asList(paths));
-	}
+    public VariableStrings(String unparsedPath) {
+        if (unparsedPath == null) {
+            throw new NullPointerException("The parameter is mandatory.");
+        }
+        String[] paths = unparsedPath.split("/");
+        splitPath = Collections.unmodifiableList(Arrays.asList(paths));
+    }
 
-	/**
-	 * Returns an String array split by the slash ("/").
-	 * 
-	 * @return
-	 * @deprecated Use instead of this the method {@link #getSplitPaths()}
-	 */
-	@Deprecated
-	public String[] getSplitPath() {
-		return splitPath.toArray(new String[splitPath.size()]);
-	}
-
-	/**
-	 * Returns the List of string split by the slash ("/").
-	 * 
-	 * @return
-	 */
-	public List<String> getSplitPaths() {
-		return splitPath;
-	}
+    /**
+     * Returns the List of string split by the slash ("/").
+     * 
+     * @return
+     */
+    public List<String> getSplitPaths() {
+        return splitPath;
+    }
 
 }

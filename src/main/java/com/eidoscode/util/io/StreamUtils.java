@@ -107,25 +107,19 @@ public final class StreamUtils {
         if (encoding == null) {
             throw new NullPointerException("The encoding is mandatory to exists.");
         }
-        String result = "";
-        if (input != null) {
-            Writer writer = new StringWriter();
+        Writer writer = new StringWriter();
 
-            char[] buffer = new char[1024];
-            try {
-                Reader reader = new BufferedReader(new InputStreamReader(input, encoding));
-                int n;
-                while ((n = reader.read(buffer)) != -1) {
-                    writer.write(buffer, 0, n);
-                }
-            } finally {
-                closeSilently(input);
+        char[] buffer = new char[1024];
+        try {
+            Reader reader = new BufferedReader(new InputStreamReader(input, encoding));
+            int n;
+            while ((n = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, n);
             }
-            result = writer.toString();
-        } else {
-            result = "";
+        } finally {
+            closeSilently(input);
         }
-        return result;
+        return writer.toString();
     }
 
     /**
