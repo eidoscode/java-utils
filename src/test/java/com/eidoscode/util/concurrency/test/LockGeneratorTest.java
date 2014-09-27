@@ -61,7 +61,6 @@ public class LockGeneratorTest {
         final String key = "testAmountOfRequestsNegative";
         int amount = LockGenerator.getConcurrentInUse(key);
         assertEquals(amount, -1);
-        System.out.println("B");
     }
 
     @Test
@@ -71,6 +70,5 @@ public class LockGeneratorTest {
         int amount = LockGenerator.getConcurrentInUse(key);
         assertEquals(amount, 1);
         LockGenerator.releaseLock(key);
-        System.out.println("B");
     }
 }
