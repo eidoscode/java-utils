@@ -19,13 +19,14 @@
 		<href>http://libraries.endrigo.com.br/java-utils/</href>
 	</bannerLeft>
 	<bannerRight>
-		<name>Endrigo Antonini</name>
+		<name>EidosCode</name>
 		<!-- 
 		<src>http://maven.apache.org/images/maven-small.gif</src>
 		 -->
 	</bannerRight>
 	<body>
 		<links>
+			<item name="EidosCode" href="http://www.eidoscode.com/" />
 			<item name="Endrigo Antonini" href="http://www.endrigo.com.br/" />
 		</links>
 		<!-- <menu name="Maven 2.0"> <item name="Introduction" href="index.html"/> 
@@ -38,7 +39,6 @@
 			<item name="FAQ" href="faq.html" />
 		</menu>
 		-->
-		 
 		<menu ref="reports" />
 	</body>
 </project>
