@@ -67,7 +67,11 @@ public final class LockGenerator {
         LockObject lock = LOCKS.get(key);
         if (lock == null) {
             synchronized (LOCK_OBJECT) {
-                lock = LOCKS.putIfAbsent(key, new LockObject());
+                lock = new LockObject();
+                final LockObject oldLock = LOCKS.putIfAbsent(key, lock);
+                if (oldLock != null) {
+                    lock = oldLock;
+                }
             }
         }
         lock.count++;
@@ -94,6 +98,23 @@ public final class LockGenerator {
                 }
             }
         }
+    }
+
+    /**
+     * Retrieve the amount of requests that was made by a given key. This helps
+     * you to check if your Thread control is satisfying your needs.
+     * 
+     * @param key
+     *            Key of the generated lock object.
+     * @return The amount of request that was made by the given key. If -1 means
+     *         that no one has already requested for that key.
+     */
+    public static int getConcurrentInUse(final String key) {
+        LockObject lock = LOCKS.get(key);
+        if (lock == null) {
+            return -1;
+        }
+        return lock.count;
     }
 }
 
