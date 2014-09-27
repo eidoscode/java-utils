@@ -6,7 +6,7 @@ import java.util.Collection;
 /**
  * Utilities classes to be used with collections.
  * 
- * @author eantonini
+ * @author antonini
  * @since 1.0
  * @version 1.0
  */

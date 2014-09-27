@@ -51,7 +51,7 @@
 
 	<developers>
 		<developer>
-			<id>eantonini</id>
+			<id>antonini</id>
 			<name>Endrigo Antonini</name>
 			<url>http://www.endrigo.com.br/</url>
 			<roles>
@@ -88,7 +88,7 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>2.3</version>
 				<executions>
 					<execution>
 						<goals>
@@ -99,7 +99,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9</version>
+				<version>2.10</version>
 				<configuration>
 					<docfilessubdirs>true</docfilessubdirs>
 					<excludedocfilessubdir>.svn</excludedocfilessubdir>
@@ -124,11 +124,11 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.4</version>
+				<version>2.5</version>
 			</plugin>
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.7</version>
+				<version>2.8.2</version>
 				<executions>
 					<execution>
 						<id>deploy</id>
@@ -143,7 +143,7 @@
 
 			<plugin>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.2</version>
+				<version>3.4</version>
 				<configuration>
 					<!-- <locales>en,fr,pt_BR</locales> <templateFile>${basedir}/src/site/maven-site.vm</templateFile> 
 						<excludeDefaults>true</excludeDefaults> -->
@@ -204,7 +204,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9</version>
+				<version>2.10</version>
 			</plugin>
 			<plugin>
 				<artifactId>maven-jxr-plugin</artifactId>

@@ -11,7 +11,7 @@ package br.com.endrigo.util.jaxrs;
  * 
  * @deprecated Use the {@link com.eidoscode.util.jaxrs.VariableStrings} instead
  *             of this one.
- * @author eantonini
+ * @author antonini
  * @since 1.0.1
  * @version 1.0
  */

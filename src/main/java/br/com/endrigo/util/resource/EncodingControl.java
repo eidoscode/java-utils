@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
  * 
  * @deprecated Use the {@link com.eidoscode.util.resource.EncodingControl}
  *             instead of this one.
- * @author eantonini
+ * @author antonini
  * @since 1.0.3
  * @version 1.0
  */

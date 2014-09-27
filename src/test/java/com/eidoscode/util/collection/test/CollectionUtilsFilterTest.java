@@ -18,7 +18,7 @@ import com.eidoscode.util.collection.Predicate;
  * Unit test to check the method
  * {@link CollectionsUtils#filter(Collection, Predicate)}.
  * 
- * @author eantonini
+ * @author antonini
  * @since 1.0
  * @version 1.0
  */
