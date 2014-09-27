@@ -13,7 +13,7 @@ import com.eidoscode.util.resource.EncodingControl;
 /**
  * Unit test of the {@link EncodingControl}.
  * 
- * @author eantonini
+ * @author antonini
  * @since 1.0.3
  * @version 1.0
  * 

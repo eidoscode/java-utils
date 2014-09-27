@@ -2,7 +2,7 @@
  *
  * Package containing classes to help working with Collections.
  * 
- * @author eantonini
+ * @author antonini
  * @since 1.0
  * @version 1.0
  */
