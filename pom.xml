@@ -63,16 +63,16 @@
 	<distributionManagement>
 		<repository>
 			<id>eidoscode-mvn-repository</id>
-			<url>scp://eidoscode.com/deploy/maven2/releases/</url>
+			<url>scp://deploy.eidoscode.com/deploy/maven2/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>eidoscode-mvn-repository</id>
-			<url>scp://eidoscode.com/deploy/maven2/snapshots/</url>
+			<url>scp://deploy.eidoscode.com/deploy/maven2/snapshots/</url>
 			<uniqueVersion>true</uniqueVersion>
 		</snapshotRepository>
 		<site>
 			<id>eidoscode-mvn-repository</id>
-			<url>scp://eidoscode.com/deploy/site/java-utils/${project.version}</url>
+			<url>scp://deploy.eidoscode.com/deploy/site/java-utils/${project.version}</url>
 		</site>
 	</distributionManagement>
 
