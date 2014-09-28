@@ -63,16 +63,16 @@
 	<distributionManagement>
 		<repository>
 			<id>eidoscode-mvn-repository</id>
-			<url>scp://deploy.eidoscode.com/deploy/maven2/releases/</url>
+			<url>scp://eidoscode.com/deploy/maven2/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>eidoscode-mvn-repository</id>
-			<url>scp://deploy.eidoscode.com/deploy/maven2/snapshots/</url>
+			<url>scp://eidoscode.com/deploy/maven2/snapshots/</url>
 			<uniqueVersion>true</uniqueVersion>
 		</snapshotRepository>
 		<site>
 			<id>eidoscode-mvn-repository</id>
-			<url>scp://deploy.eidoscode.com/deploy/site/java-utils/${project.version}</url>
+			<url>scp://eidoscode.com/deploy/site/java-utils/${project.version}</url>
 		</site>
 	</distributionManagement>
 
@@ -82,12 +82,12 @@
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
 				<artifactId>wagon-webdav-jackrabbit</artifactId>
-				<version>2.6</version>
+				<version>2.7</version>
 			</extension>
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
 				<artifactId>wagon-ssh</artifactId>
-				<version>2.5</version>
+				<version>2.7</version>
 			</extension>
 		</extensions>
 		<plugins>
