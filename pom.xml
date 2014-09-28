@@ -8,7 +8,7 @@
 
 	<name>Java Utils</name>
 	<description>The purpose of this component is to provide some utility classes on Java. It was designed to use it as a dependency of your project.</description>
-	<url>http://www.eidoscode.com/java-utils/</url>
+	<url>http://libs.eidoscode.com/java-utils/</url>
 
 	<inceptionYear>2012</inceptionYear>
 
@@ -62,27 +62,31 @@
 
 	<distributionManagement>
 		<repository>
-			<id>eidoscode-repository-release</id>
-			<url>ftp://ftp.eidoscode.com/</url>
+			<id>eidoscode-mvn-repository</id>
+			<url>scpexe://eidoscode.com/maven2/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>eidoscode-repository-snapshot</id>
-			<url>ftp://ftp.eidoscode.com/</url>
+			<id>eidoscode-mvn-repository</id>
+			<url>scpexe://eidoscode.com/maven2/snapshots/</url>
 			<uniqueVersion>true</uniqueVersion>
 		</snapshotRepository>
 		<site>
-			<id>eidoscode-repository-site</id>
-			<url>ftp://ftp.eidoscode.com/java-utils/</url>
+			<id>eidoscode-mvn-repository</id>
+			<url>scpexe://eidoscode.com/site/java-utils/${project.version}</url>
 		</site>
 	</distributionManagement>
 
 	<build>
 		<extensions>
-			<!-- Enabling the use of FTP -->
+			<!-- Enabling the use of SSH -->
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ftp</artifactId>
-				<version>2.3</version>
+				<artifactId>wagon-ssh-external</artifactId>
+				<version>2.7</version>
+				<!-- 
+				<artifactId>wagon-ssh</artifactId>
+				<version>1.0</version>
+				 -->
 			</extension>
 		</extensions>
 		<plugins>
@@ -154,6 +158,27 @@
 						<goals>
 							<goal>site</goal>
 						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<version>1.0-beta-5</version>
+				<executions>
+					<execution>
+						<id>upload-javadoc</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>upload</goal>
+						</goals>
+						<configuration>
+							<fromDir>local.dir</fromDir>
+							<includes>*</include>
+							<excludes>pom.xml</excludes>
+							<url>scp://your.remote.host/</url>
+							<toDir>remote.dir</toDir>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
