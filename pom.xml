@@ -85,8 +85,35 @@
 				<version>2.3</version>
 			</extension>
 		</extensions>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<configuration>
+						<use>true</use>
+						<version>true</version>
+						<overview>${basedir}/src/main/javadoc/package.html</overview>
+						<windowtitle>Generic Utils</windowtitle>
+						<doctitle>Generic Utils</doctitle>
+						<links>
+							<link>http://www.eidoscode.com/</link>
+						</links>
+					</configuration>
+				</plugin>			
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+   			<plugin>
 				<artifactId>maven-source-plugin</artifactId>
 				<version>2.3</version>
 				<executions>
@@ -97,9 +124,10 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- 
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10</version>
+				<version>2.10.3</version>
 				<configuration>
 					<docfilessubdirs>true</docfilessubdirs>
 					<excludedocfilessubdir>.svn</excludedocfilessubdir>
@@ -122,6 +150,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			 -->
 			<plugin>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.5</version>
@@ -202,10 +231,12 @@
 					</reportSet>
 				</reportSets>
 			</plugin>
+			<!-- 
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.10</version>
 			</plugin>
+			 -->
 			<plugin>
 				<artifactId>maven-jxr-plugin</artifactId>
 				<version>2.3</version>
@@ -245,7 +276,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>2.5.2</version>
+				<version>3.0.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
